@@ -1,0 +1,10 @@
+<h1>Get involved with our Events below</h1>
+<p><%= link_to "Home", root_path %></p>
+<ol>
+  <% @gatherings.each do |gathering| %>
+  <li><%= link_to "#{gathering.title}", gathering_path(gathering) %></li>
+  <% end %>
+</ol>
+
+<%= link_to "New Event", new_gathering_path %>
+
