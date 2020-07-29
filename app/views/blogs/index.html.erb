@@ -1,7 +1,9 @@
 <h1> See our blogs by our experts </h1>
-
-
-
+<ol>
+  <% @blogs.each do |blog| %>
+  <li><%= link_to "#{blog.title}", blog_path(blog) %></li>
+  <% end %>
+</ol>
 
 <p>Have an interesting story? Submit below!</p>
 <%= link_to "New Blog", new_blog_path %>
