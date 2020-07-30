@@ -1,5 +1,7 @@
 <div>
   <p><%= @blog.title %></p>
   <p><%= @blog.date %></p>
+  <p><%= @blog.content %></p>
 </div>
-<p><%= link_to "Back to all blogs", blogs_path %></p>
+ <%= link_to "Delete Blog", blog_path(@blog), :method => :delete %>
+ <%= link_to "Back to all blogs", blogs_path %>

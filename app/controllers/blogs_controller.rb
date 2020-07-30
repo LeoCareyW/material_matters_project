@@ -24,12 +24,18 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def destroy
+    @blog = Blog.find(params[:id])
+    @blog.destroy
+    redirect_to blogs_path, notice: "The blog #{@blog.title} has been deleted."
+  end
+
   def update
     @blog = Blog.find(params[:id])
     @blog.update(blog_params)
 
     if @blog.save
-      redirect_to blog_path(@place)
+      redirect_to blog_path(@blog)
     else
       render :new
     end
@@ -38,6 +44,6 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :date)
+    params.require(:blog).permit(:title, :date, :content)
   end
 end
