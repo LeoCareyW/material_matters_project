@@ -3,6 +3,7 @@
     <%= f.input :title %>
     <%= f.input :content %>
     <%= f.input :date %>
+    <%= f.input :photo, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Submit Blog Entry" %>
     <% end %>
 </div>
