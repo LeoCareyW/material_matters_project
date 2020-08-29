@@ -1,6 +1,6 @@
 class GatheringsController < ApplicationController
   def index
-    @gatherings = Gathering.all
+    @gatherings = policy_scope(Gathering)
   end
 
   def new

@@ -1,14 +1,18 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
-    @blogs = Blog.all
+    @blogs = policy_scope(Blog)
   end
 
   def new
     @blog = Blog.new
+    authorize @blog
   end
 
   def create
     @blog = Blog.new(blog_params)
+    # @blog.user = current_user
+    authorize @blog
       if @blog.save
         redirect_to blog_path(@blog)
       else
@@ -42,6 +46,11 @@ class BlogsController < ApplicationController
   end
 
   private
+
+  def set_blog
+    @blog = Blog.find(params[:id])
+    authorize @blog
+  end
 
   def blog_params
     params.require(:blog).permit(:title, :date, :content, photos: [])
