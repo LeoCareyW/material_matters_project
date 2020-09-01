@@ -4,5 +4,5 @@
   <p><%= @gathering.description %></p>
   <p><%= @gathering.date %></p>
 </div>
- <%= link_to "Delete Event", gathering_path(@gathering), :method => :delete %>
+ <%= link_to "Remove Event from Site", gathering_path(@gathering), :method => :delete %>
 <p><%= link_to "Back to events", gatherings_path %></p>
