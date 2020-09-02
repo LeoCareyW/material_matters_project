@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
-    @blogs = policy_scope(Blog)
+    @blogs = policy_scope(Blog).order(created_at: :desc)
   end
 
   def new
