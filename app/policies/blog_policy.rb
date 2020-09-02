@@ -17,16 +17,15 @@ class BlogPolicy < ApplicationPolicy
     true
   end
 
-  def edit
+  def edit?
     user == record.user
   end
 
-  def update
+  def update?
     user == record.user
   end
 
-  def destroy
-    true
+  def destroy?
+    user == record.user
   end
-
 end

@@ -1,4 +1,5 @@
 class GatheringsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_gathering, only: [:show, :edit, :update, :destroy]
   def index
     @gatherings = policy_scope(Gathering)
@@ -11,6 +12,7 @@ class GatheringsController < ApplicationController
 
   def create
     @gathering = Gathering.new(gathering_params)
+    @gathering.user = current_user
     authorize @gathering
       if @gathering.save
         redirect_to gathering_path(@gathering)

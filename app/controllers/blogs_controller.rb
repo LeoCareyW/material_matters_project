@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   def index
     @blogs = policy_scope(Blog)
@@ -11,7 +12,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    # @blog.user = current_user
+    @blog.user = current_user
     authorize @blog
       if @blog.save
         redirect_to blog_path(@blog)

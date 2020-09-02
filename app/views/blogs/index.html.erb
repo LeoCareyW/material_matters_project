@@ -6,6 +6,8 @@
   <% end %>
 </ol>
 
-<p>Have an interesting story? Submit below!</p>
-<%= link_to "New Blog", new_blog_path %>
+<p>Have an interesting story? Email us at...</p>
 
+<% if policy(Blog).new? %>
+<%= link_to "New Blog", new_blog_path %>
+<% end %>
