@@ -1,0 +1,12 @@
+<div>
+  <p><%= @partner.name %></p>
+  <p><%= @partner.description %></p>
+
+</div>
+
+ <%= link_to "Back to all partners", partners_path %>
+
+<% if policy(Partner).destroy? %>
+  <%= link_to "Delete Partner", partner_path(@partner), :method => :delete, data: { confirm: 'Are you sure?'} %>
+  <%= link_to "Edit Partner", edit_partner_path(@partner) %>
+<% end %>

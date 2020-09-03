@@ -1,0 +1,13 @@
+<h1> See our partners </h1>
+<p><%= link_to "Home", root_path %></p>
+<ol>
+  <% @partners.each do |partner| %>
+  <li><%= link_to "#{partner.name}", partner_path(partner) %></li>
+  <% end %>
+</ol>
+
+<p>Know someone interesting?</p>
+
+<% if policy(Partner).new? %>
+<%= link_to "New Partner", new_partner_path %>
+<% end %>
