@@ -8,6 +8,6 @@
 <p><%= link_to "Back to events", gatherings_path %></p>
 
 <% if policy(Gathering).destroy? %>
-  <%= link_to "Remove Event from Site", gathering_path(@gathering), :method => :delete %>
-  <%= link_to "Edit Event", edit_blog_path(@gathering) %>
+  <%= link_to "Remove Event from Site", gathering_path(@gathering), :method => :delete, data: { confirm: 'Are you sure?'} %>
+  <%= link_to "Edit Event", edit_gathering_path(@gathering) %>
 <% end %>

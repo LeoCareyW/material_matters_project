@@ -1,0 +1,11 @@
+<div>
+  <%= simple_form_for(@gathering) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <%= f.input :date %>
+    <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Submit Edits to Event" %>
+    <% end %>
+</div>
+

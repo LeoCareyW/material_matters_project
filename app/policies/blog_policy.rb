@@ -6,7 +6,7 @@ class BlogPolicy < ApplicationPolicy
   end
 
   def new
-    user.admin
+    user_admin
   end
 
   def create?
