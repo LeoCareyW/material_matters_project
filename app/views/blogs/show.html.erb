@@ -6,7 +6,7 @@
 
  <%= link_to "Back to all blogs", blogs_path %>
 
-<% if current_user == @blog.user %>
- <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>
- <%= link_to "Edit Blog", edit_blog_path(@blog) %>
+<% if policy(Blog).destroy? %>
+  <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>
+  <%= link_to "Edit Blog", edit_blog_path(@blog) %>
 <% end %>
