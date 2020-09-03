@@ -1,0 +1,13 @@
+<div>
+  <p><%= @team.name %></p>
+  <p><%= @team.role  %></p>
+  <p><%= @team.description %></p>
+
+</div>
+
+ <%= link_to "Back to all members", teams_path %>
+
+<% if policy(Team).destroy? %>
+  <%= link_to "Delete Member", team_path(@team), :method => :delete, data: { confirm: 'Are you sure?'} %>
+  <%= link_to "Edit Member", edit_team_path(@team) %>
+<% end %>
