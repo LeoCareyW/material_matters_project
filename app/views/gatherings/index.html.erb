@@ -7,5 +7,7 @@
   <% end %>
 </ol>
 
+<% if policy(Gathering).new? %>
 <%= link_to "New Event", new_gathering_path %>
+<% end %>
 

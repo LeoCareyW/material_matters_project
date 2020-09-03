@@ -6,11 +6,11 @@ class GatheringPolicy < ApplicationPolicy
   end
 
   def new
-    true
+    user_admin
   end
 
   def create?
-    true
+    user_admin
   end
 
   def show
@@ -18,19 +18,23 @@ class GatheringPolicy < ApplicationPolicy
   end
 
   def edit
-    user_admin_or_owner
+    user_admin
   end
 
   def update
-    user_admin_or_owner
+    user_admin
   end
 
   def destroy
-    user_admin_or_owner
+    user_admin
   end
 
-  def user_admin_or_owner
-    user == record.user || user.admin
+  private
+
+  def user_admin
+    if user
+      user.admin?
+    end
   end
 
 end
