@@ -1,1 +1,10 @@
-<h1>Edit page</h1>
+<div>
+  <%= simple_form_for(@blog) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :date %>
+    <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Submit Edits to Blog" %>
+    <% end %>
+</div>
+

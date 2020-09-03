@@ -12,7 +12,7 @@ class GatheringsController < ApplicationController
 
   def create
     @gathering = Gathering.new(gathering_params)
-    @gathering.user = current_user
+    @gathering.user_id = current_user
     authorize @gathering
       if @gathering.save
         redirect_to gathering_path(@gathering)
@@ -27,6 +27,7 @@ class GatheringsController < ApplicationController
 
   def edit
     @gathering = Gathering.find(params[:id])
+    authorize @gathering
   end
 
   def destroy

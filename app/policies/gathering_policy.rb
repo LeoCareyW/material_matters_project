@@ -17,15 +17,15 @@ class GatheringPolicy < ApplicationPolicy
     true
   end
 
-  def edit
+  def edit?
     user_admin
   end
 
-  def update
+  def update?
     user_admin
   end
 
-  def destroy
+  def destroy?
     user_admin
   end
 
@@ -36,5 +36,4 @@ class GatheringPolicy < ApplicationPolicy
       user.admin?
     end
   end
-
 end
