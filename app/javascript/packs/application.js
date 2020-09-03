@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -25,6 +26,11 @@ require("channels")
 // External imports
 import "bootstrap";
 
+$(".audioButton").on("click", function() {
+  $(".audio-play")[0].currentTime = 0;
+  return $(".audio-play")[0].play();
+});
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -32,3 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+

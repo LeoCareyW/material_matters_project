@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_03_110450) do
+ActiveRecord::Schema.define(version: 2020_09_03_125522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,10 @@ ActiveRecord::Schema.define(version: 2020_09_03_110450) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
     t.bigint "user_id"
+    t.string "mp3_file_name"
+    t.string "mp3_content_type"
+    t.bigint "mp3_file_size"
+    t.datetime "mp3_updated_at"
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
