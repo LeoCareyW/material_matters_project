@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :blogs
-  has_many :gatherings
+  # has_many :gatherings
 end

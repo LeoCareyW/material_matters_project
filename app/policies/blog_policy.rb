@@ -6,7 +6,7 @@ class BlogPolicy < ApplicationPolicy
   end
 
   def new
-    true
+    user.admin
   end
 
   def create?
@@ -17,16 +17,21 @@ class BlogPolicy < ApplicationPolicy
     true
   end
 
-  def edit
-    user == record.user
+  def edit?
+    user_admin_or_owner
   end
 
-  def update
-    user == record.user
+  def update?
+    user_admin_or_owner
   end
 
-  def destroy
-    true
+  def destroy?
+    user_admin_or_owner
   end
 
+  private
+
+  def user_admin_or_owner
+    user == record.user || user.admin
+  end
 end
