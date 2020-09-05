@@ -1,12 +1,52 @@
-<h1>Material Matters</h1>
-<p>Click here to find out Frankies address, card details, and mothers maiden name.</p>
-<p>Click <%= link_to "here", blogs_path %> to see our latest blogs written by our in house experts.</p>
-<p></p>
-<p>Click <%= link_to "here", gatherings_path %> to see our upcoming events.</p>
-<p>Click <%= link_to "here", partners_path %> to see our partners.</p>
-<p>Click <%= link_to "here", teams_path %> to see our team.</p>
+<div class="home-main-container">
+  <div class="fade-in">
+    <h1 class="banner-title">Material Matters</h1>
+  </div>
+    <div class="fade-in">
+    <div class="options-container">
+      <main class="page-content">
+          <div class="d_card">
+            <%= link_to blogs_path do %>
+            <div class="content">
+              <h2 class="heading">Blogs</h2>
+              <p class="data-content">Read our collection of blog posts from our in-house experts.</p>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="d_card">
+          <%= link_to gatherings_path do %>
+            <div class="content">
+              <h2 class="heading">Gatherings</h2>
+              <p class="data-content">See which events are currently on near you.</p>
+            </div>
+          <% end %>
+        </div>
+
+          <div class="d_card">
+            <%= link_to partners_path do %>
+            <div class="content">
+              <h2 class="heading">Partners</h2>
+              <p class="data-content">See our group of partners who we work closely with. </p>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="d_card">
+          <%= link_to teams_path do %>
+            <div class="content">
+              <h2 class="heading">Our Team</h2>
+              <p class="data-content">Meet the team behind the company. </p>
+            </div>
+          <% end %>
+        </div>
+      </main>
+    </div>
+</div>
+</div>
 
 
-<% if current_user %>
-  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-<% end %>
+  <% if current_user %>
+    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+  <% end %>
+</div>
