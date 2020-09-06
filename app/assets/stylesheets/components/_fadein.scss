@@ -2,22 +2,22 @@
   display: flex;
   justify-content: space-around;
   // margin-bottom: -30vh;
-  animation: fadeIn ease 1.2s;
-  -webkit-animation: fadeIn ease 1.2s;
-  -moz-animation: fadeIn ease 1.2s;
-  -o-animation: fadeIn ease 1.2s;
-  -ms-animation: fadeIn ease 1.2s;
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
 }
 
 .fade-in-1 {
   display: flex;
   justify-content: space-around;
   // margin-bottom: -30vh;
-  animation: fadeIn ease 6s;
-  -webkit-animation: fadeIn ease 6s;
-  -moz-animation: fadeIn ease 6s;
-  -o-animation: fadeIn ease 6s;
-  -ms-animation: fadeIn ease 6s;
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
 }
 
 @keyframes fadeIn {

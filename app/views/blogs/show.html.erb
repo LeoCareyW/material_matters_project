@@ -2,7 +2,7 @@
   <p><%= @blog.title %></p>
   <p><%= @blog.date %></p>
   <p><%= @blog.content %></p>
-  <% if @blog.mp3 != nil %>
+  <% if @blog.mp3_file_name != nil %>
     <%= audio_tag @blog.mp3, class: "audio-play" %>
     <p class="btn btn-primary audioButton">Play</p>
   <% end %>
