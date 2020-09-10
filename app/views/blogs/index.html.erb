@@ -1,14 +1,57 @@
 <div class="blog-title-container">
   <h1> See our blogs by our experts </h1>
 </div>
-<p><%= link_to "Home", root_path %></p>
-<ol>
-  <% @blogs.each do |blog| %>
-  <li><%= link_to "#{blog.title}", blog_path(blog) %></li>
+<div class="home-container">
+  <p><%= link_to "Home", root_path %></p>
+  <% if policy(Blog).new? %>
+  <%= link_to "New Blog", new_blog_path %>
   <% end %>
-</ol>
+</div>
+<div class="action-container">
+  <p>Have an interesting story? Email us at...</p>
+</div>
+<div class="blog-item-container">
+  <% @blogs.each do |blog| %>
+    <div class="flip-card-container" style="--hue: 220">
+      <div class="flip-card">
 
-<p>Have an interesting story? Email us at...</p>
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+            <figcaption><%= link_to "#{blog.title}", blog_path(blog) %></figcaption>
+          </figure>
+          <ul>
+            <li>{blog.description}</li>
+            <li>Detail 2</li>
+            <li>Detail 3</li>
+            <li>Detail 4</li>
+            <li>Detail 5</li>
+          </ul>
+        </div>
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+          </figure>
+
+          <button>Book</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <% if policy(Blog).new? %>
 <%= link_to "New Blog", new_blog_path %>
