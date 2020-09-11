@@ -12,30 +12,28 @@
 </div>
 <div class="blog-item-container">
   <% @blogs.each do |blog| %>
-    <div class="flip-card-container" style="--hue: 220">
+    <div class="flip-card-container">
       <div class="flip-card">
 
         <div class="card-front">
           <figure>
             <div class="img-bg"></div>
-            <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
-            <figcaption><%= link_to "#{blog.title}", blog_path(blog) %></figcaption>
+            <img src="https://images.unsplash.com/photo-1599797574782-fd636bdb5cd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1275&q=80" alt="Brohm Lake">
+              <figcaption class="blog-card-title"><%= blog.title %>  |  <%= blog.date %></figcaption>
           </figure>
-          <ul>
-            <li>{blog.description}</li>
-            <li>Detail 2</li>
-            <li>Detail 3</li>
-            <li>Detail 4</li>
-            <li>Detail 5</li>
+          <ul class="blog-card-content">
+            <% if blog.content %>
+            <li><%=blog.content %></li>
+             <% end %>
           </ul>
         </div>
         <div class="card-back">
           <figure>
             <div class="img-bg"></div>
-            <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+            <img src="https://images.unsplash.com/photo-1599797574782-fd636bdb5cd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1275&q=80" alt="Brohm Lake">
           </figure>
 
-          <button>Book</button>
+          <button class="blog-read-button"><%= link_to "Read", blog_path(blog) %></button>
 
           <div class="design-container">
             <span class="design design--1"></span>
