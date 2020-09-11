@@ -1,1 +1,52 @@
-// Specific CSS for your home-page
+body {
+  background-color: white;
+}
+
+.content {
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    color: white;
+    text-decoration: none;
+  }
+  p {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.d_card {
+  a {
+    text-decoration: none;
+  }
+}
+
+.banner-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner-title {
+  margin-bottom: 8vh;
+  font-size: 50px;
+}
+
+.home-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 20vh;
+}
+
+.option {
+  a {
+    color: black;
+  }
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-between;
+}
+

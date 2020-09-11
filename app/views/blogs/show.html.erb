@@ -2,8 +2,10 @@
   <p><%= @blog.title %></p>
   <p><%= @blog.date %></p>
   <p><%= @blog.content %></p>
-  <%= audio_tag @blog.mp3, class: "audio-play" %>
-  <p class="btn btn-primary audioButton">Play</p>
+  <% if @blog.mp3 != nil %>
+    <%= audio_tag @blog.mp3, class: "audio-play" %>
+    <p class="btn btn-primary audioButton">Play</p>
+  <% end %>
 </div>
 
  <%= link_to "Back to all blogs", blogs_path %>
