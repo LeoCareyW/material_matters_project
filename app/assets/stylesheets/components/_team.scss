@@ -1,0 +1,27 @@
+.center-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.team-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 15%;
+  margin-top: 10%;
+}
+
+.team-member {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.team-image {
+  img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  }
+}
