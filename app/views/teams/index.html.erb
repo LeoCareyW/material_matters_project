@@ -1,4 +1,4 @@
-<h1 class="center-header"> Material Matters Team </h1>
+<h1 class="center-container"> Material Matters Team </h1>
 <p><%= link_to "Home", root_path %></p>
 <div class="team-container">
   <% @teams.each do |team| %>
@@ -10,8 +10,8 @@
     </div>
   <% end %>
 </div>
-
-<% if policy(Team).new? %>
-<%= link_to "New Member", new_team_path %>
-<% end %>
-
+<div class="center-container">
+  <% if policy(Team).new? %>
+  <%= link_to "New Member", new_team_path %>
+  <% end %>
+</div>

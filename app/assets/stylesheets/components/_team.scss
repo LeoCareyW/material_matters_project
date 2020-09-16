@@ -1,4 +1,4 @@
-.center-header {
+.center-container {
   display: flex;
   justify-content: space-around;
 }
@@ -15,6 +15,9 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  a {
+    color: black;
+  }
 }
 
 .team-image {
