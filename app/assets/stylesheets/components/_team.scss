@@ -1,13 +1,14 @@
 .center-container {
   display: flex;
   justify-content: space-around;
+  margin-top: 20px;
 }
 
 .team-container {
   display: flex;
   justify-content: space-between;
   margin: 15%;
-  margin-top: 10%;
+  margin-top: 8%;
   margin-bottom: 5%;
 }
 
@@ -21,6 +22,11 @@
   a {
     color: black;
   }
+}
+
+.team-member-name {
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .team-image {

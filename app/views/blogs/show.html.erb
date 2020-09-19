@@ -1,21 +1,31 @@
-<div>
-  <p><%= @blog.title %></p>
-  <p><%= @blog.date %></p>
-  <p><%= @blog.content %></p>
-  <% if @blog.mp3_file_name != nil %>
-    <%= audio_tag @blog.mp3, class: "audio-play" %>
-    <p class="btn btn-primary audioButton">Play</p>
+<div class="parent-blog-show-container">
+  <div class="blog-show-container">
+    <div>
+      <div class="blog-photo-one">
+        <%= cl_image_tag("samples/ecommerce/leather-bag-gray.jpg") %>
+      </div>
+      <h1 class="blog-show-title"><%= @blog.title %></h1>
+      <p><%= @blog.date %></p>
+      <div class="blog-show-content">
+        <%= @blog.content %>
+      </div>
+      <div class="blog-photo-two">
+        <%= cl_image_tag("samples/imagecon-group.jpg") %>
+      </div>
+      <% if @blog.mp3_file_name != nil %>
+        <%= audio_tag @blog.mp3, class: "audio-play" %>
+        <p class="btn btn-primary audioButton">Play</p>
+      <% end %>
+      <%= link_to "Back to all blogs", blogs_path %>
+    </div>
+
+
+    <% if policy(Blog).destroy? %>
+      <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>
+      <%= link_to "Edit Blog", edit_blog_path(@blog) %>
   <% end %>
+  </div>
 </div>
-
- <%= link_to "Back to all blogs", blogs_path %>
-
-<% if policy(Blog).destroy? %>
-  <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>
-  <%= link_to "Edit Blog", edit_blog_path(@blog) %>
-<% end %>
-
-
 
 
 
