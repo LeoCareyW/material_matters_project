@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
+gem "actionview", ">= 6.0.3.3"
+
 gem 'paperclip'
 
 gem 'pundit'
