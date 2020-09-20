@@ -1,12 +1,17 @@
-<h1> Material Matters Team </h1>
+<h1 class="center-container"> Material Matters Team </h1>
 <p><%= link_to "Home", root_path %></p>
-<ol>
+<div class="team-container">
   <% @teams.each do |team| %>
-  <li><%= link_to "#{team.name}", team_path(team) %></li>
+    <div class="team-member">
+      <div class="team-image">
+        <%= cl_image_tag("samples/people/bicycle.jpg") %>
+      </div>
+      <p><%= link_to "#{team.name}", team_path(team) %></p>
+    </div>
   <% end %>
-</ol>
-
-<% if policy(Team).new? %>
-<%= link_to "New Member", new_team_path %>
-<% end %>
-
+</div>
+<div class="center-container">
+  <% if policy(Team).new? %>
+  <%= link_to "New Member", new_team_path %>
+  <% end %>
+</div>
