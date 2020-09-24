@@ -1,15 +1,21 @@
-<h1 class="center-container"> Meet Our Team </h1>
-  <div class="home-container">
-    <p><%= link_to "Home", root_path %></p>
+<%= link_to root_path do %>
+<div class="back-button">
+  <div class="arrow-wrap">
+    <span class="arrow-part-1"></span>
+    <span class="arrow-part-2"></span>
+    <span class="arrow-part-3"></span>
   </div>
+</div>
+<% end %>
+<h1 class="center-container"> Meet Our Team </h1>
   <div class="fade-in-1">
     <div class="team-container">
       <% @teams.each do |team| %>
         <div class="team-member">
           <div class="team-image">
-            <%= cl_image_tag("samples/people/bicycle.jpg") %>
+            <%= cl_image_tag team.photos[0].key %>
           </div>
-          <p class="team-member-name"><%= link_to "#{team.name}", team_path(team) %></p>
+          <p class="team-member-name"><%= link_to "#{team.name}", team_path(team) %> |  <span class="role"><%= team.role %></span> </p>
             <p>Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when an unknown

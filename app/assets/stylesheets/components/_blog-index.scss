@@ -9,7 +9,8 @@ body {
 .blog-title-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 10vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 .home-container {
@@ -27,6 +28,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  a {
+    color: white;
+  }
   img {
     height: 60vh;
     width: 60vw;
@@ -48,4 +52,59 @@ body {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: 0.5s;
+}
+
+.card-category:hover {
+  font-size: 28px;
+ }
+
+ @media only screen and (max-width: 1670px) {
+  .card-category {
+      width: 65vw;
+      height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 1572px) {
+  .card-category {
+      width: 67vw;
+      height: 52vh;
+  }
+}
+
+@media only screen and (max-width: 1540px) {
+  .card-category {
+      width: 69vw;
+      height: 44vh;
+  }
+}
+
+
+ @media only screen and (max-width: 1390px) {
+  .card-category {
+      width: 70vw;
+      height: 55vh;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .card-category {
+      width: 78vw;
+      height: 63vh;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .card-category {
+      width: 85vw;
+      height: 70vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card-category {
+      width: 122vw;
+      height: 108vh;
+  }
 }
