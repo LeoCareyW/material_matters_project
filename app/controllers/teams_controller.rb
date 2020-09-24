@@ -33,7 +33,7 @@ class TeamsController < ApplicationController
   def destroy
     @team = Team.find(params[:id])
     @team.destroy
-    redirect_to teams_path, notice: "The event #{@team.title} has been deleted."
+    redirect_to teams_path, notice: "This person has been deleted."
   end
 
   def update

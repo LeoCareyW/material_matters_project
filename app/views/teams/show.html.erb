@@ -2,7 +2,7 @@
   <p><%= @team.name %></p>
   <p><%= @team.role  %></p>
   <p><%= @team.description %></p>
-
+  <%= @team.photos[0].key %>
 </div>
 
  <%= link_to "Back to all members", teams_path %>

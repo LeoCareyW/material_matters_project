@@ -30,7 +30,7 @@ gem 'pundit'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
-gem 'cloudinary', '~> 1.12.0'
+gem 'cloudinary', '~> 1.16.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

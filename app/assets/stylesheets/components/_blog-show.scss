@@ -49,6 +49,12 @@
   }
 }
 
+@media only screen and (max-width: 1299px) {
+  .blog-show-container {
+    min-width: 74vw;
+  }
+}
+
 @media only screen and (max-width: 1120px) {
   .blog-show-container {
     min-width: 78vw;
