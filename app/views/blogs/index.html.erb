@@ -7,9 +7,13 @@
   <%= link_to "New Blog", new_blog_path %>
   <% end %>
 </div>
-<div class="action-container">
-  <p>Have an interesting story? Email us at...</p>
+<div class="main-blog-container">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1494236581341-7d38b2e7d824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2144&q=80)">
+    <%= @blogs[0].title %>
+  </div>
 </div>
+
+
 <div class="blog-item-container">
   <% @blogs.each do |blog| %>
     <div class="flip-card-container">
