@@ -1,12 +1,32 @@
-<%= link_to root_path do %>
 <div class="back-button">
-  <div class="arrow-wrap">
-    <span class="arrow-part-1"></span>
-    <span class="arrow-part-2"></span>
-    <span class="arrow-part-3"></span>
+  <%= link_to root_path do %>
+    <div class="arrow-wrap">
+      <span class="arrow-part-1"></span>
+      <span class="arrow-part-2"></span>
+      <span class="arrow-part-3"></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="dropDown-wrapper">
+  <input type="checkbox" id="dropDown-toggle">
+  <label for="dropDown-toggle" class="dropDown-toggle-label">Menu</label>
+  <div class="dropDown">
+    <%= link_to blogs_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-1">Blogs</label>
+    <% end %>
+    <%= link_to gatherings_path do %>
+    <input type="radio" id="option-2" name="options">
+    <label for="option-2">Events</label>
+    <% end %>
+    <%= link_to partners_path do %>
+    <input type="radio" id="option-3" name="options">
+    <label for="option-3">Partners</label>
+    <% end %>
   </div>
 </div>
-<% end %>
+
 <h1 class="center-container"> Meet Our Team </h1>
   <div class="fade-in-1">
     <div class="team-container">
