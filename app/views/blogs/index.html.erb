@@ -2,16 +2,34 @@
   <h1 class="blog-index-title"> Blogs </h1>
 </div> -->
 
-<%= link_to root_path do %>
 <div class="back-button">
+  <%= link_to root_path do %>
   <div class="arrow-wrap">
     <span class="arrow-part-1"></span>
     <span class="arrow-part-2"></span>
     <span class="arrow-part-3"></span>
   </div>
+  <% end %>
 </div>
-<% end %>
 
+<div class="dropDown-wrapper">
+  <input type="checkbox" id="dropDown-toggle">
+  <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
+  <div class="dropDown">
+    <%= link_to gatherings_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-1">EVENTS</label>
+    <% end %>
+    <%= link_to partners_path do %>
+    <input type="radio" id="option-2" name="options">
+    <label for="option-2">PARTNERS</label>
+    <% end %>
+    <%= link_to teams_path do %>
+    <input type="radio" id="option-3" name="options">
+    <label for="option-3">TEAM</label>
+    <% end %>
+  </div>
+</div>
 <div class="blog-title-container">
   <h1 class="blog-index-title">Blogs</h1>
 </div>
