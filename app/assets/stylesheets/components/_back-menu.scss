@@ -10,7 +10,7 @@
     top: -2vh;
     padding: 8px 15px 8px 15px;
     cursor: pointer;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-weight: 340;
     border-radius: 70px;
     font-family: sans-serif;
@@ -25,8 +25,8 @@
 .dropDown-toggle-label:hover {
     background-color: #000000;
     color: #fff;
-    transform: rotate(10deg);
-    top: -1vh;
+    // transform: rotate(90deg);
+    top: -1.7vh;
 }
 
 .dropDown-toggle-label:active {
