@@ -1,95 +1,35 @@
+
 <div class="parent-blog-show-container">
   <div class="blog-show-container">
-    <div>
-      <div class="blog-photo-one">
-        <%= cl_image_tag("samples/ecommerce/leather-bag-gray.jpg") %>
-      </div>
-      <h1 class="blog-show-title"><%= @blog.title %></h1>
-      <p><%= @blog.date %></p>
-      <div class="blog-show-content">
-        <%= @blog.content %>
-      </div>
-      <div class="blog-photo-two">
-        <%= cl_image_tag("samples/imagecon-group.jpg") %>
-      </div>
-      <% if @blog.mp3_file_name != nil %>
-        <%= audio_tag @blog.mp3, class: "audio-play" %>
-        <p class="btn btn-primary audioButton">Play</p>
-      <% end %>
-      <%= link_to "Back to all blogs", blogs_path %>
+<div id="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1494236581341-7d38b2e7d824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2144&q=80)"></div>
+
+<section>
+  <h2><%= @blog.title %></h2>
+  <div class="row">
+    <div id="left">
+      <h2> <%= @blog.date %> </h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas neque totam dolorum quia! Non accusamus possimus tempora repellendus repellat nihil dolore, facere qui quasi labore praesentium tempore quisquam ratione voluptas?</p>
     </div>
-
-
-    <% if policy(Blog).destroy? %>
-      <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>
-      <%= link_to "Edit Blog", edit_blog_path(@blog) %>
-  <% end %>
+  <div id="right"><img src="https://images.pexels.com/photos/982612/pexels-photo-982612.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt=""></div>
+</div>
+<div class="row2">
+  <div id="left2">
+    <h2> <%= @blog.date %> </h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas neque totam dolorum quia! Non accusamus possimus tempora repellendus repellat nihil dolore, facere qui quasi labore praesentium tempore quisquam ratione voluptas?</p>
   </div>
 </div>
 
 
+</section>
 
+<section id="empty">space to scroll</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-  <div id="jp_container_1" class="jp-audio">
-    <div class="jp-type-single">
-      <div class="jp-gui jp0interface">
-         <ul>
-           <li><a href="javascript:;" tabindex="1">&#61515;</a></li>
-           <li><a href="javascript:;" tabindex="1">&#61516;</a></li>
-           <li><a href="javascript:;" tabindex="1" title="mute">&#61480;</a></li>
-           <li><a href="javascript:;" tabindex="1" title="unmute">&#61478;</a></li>
-         </ul>
-         <div class="jp-progress">
-          <div class="jp-seek-bar">
-            <div class="jp-play-bar"></div>
-          </div>
-        </div>
-
-        <div class="jp-time-holder">
-          <div class="jp-current-time"></div>
-        </div>
-
-        <div class="jp-volume-bar">
-          <div class="jp-volume-bar-value"></div>
-        </div>
-      </div>
-    </div>
+<footer>
+  <p>Images from pexels</p>
+   <% if policy(Blog).destroy? %>
+      <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>
+      <%= link_to "Edit Blog", edit_blog_path(@blog) %>
+  <% end %>
+</footer>
   </div>
-
-
-  <script>
-    var $ = jQuery;
-    $(document).ready(function(){
-      $("#jquery_jplayer_1").jPlayer({
-        ready: function () {
-          $(this).jPlayer("setMedia", {
-            mp3: "<%= @blog.mp3.url %>",
-          });
-        },
-        swfPath: "/js",
-        supplied: "mp3"
-      });
-    });
-  </script> -->
+</div>

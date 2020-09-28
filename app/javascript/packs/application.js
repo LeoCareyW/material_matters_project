@@ -9,7 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -31,6 +30,29 @@ $(".audioButton").on("click", function() {
   return $(".audio-play")[0].play();
 });
 
+
+function scrollAppear() {
+  let left = document.querySelector('#left');
+  let right = document.querySelector('#right');
+  let left2 = document.querySelector('#left2')
+  let position = left.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.5;
+
+  if(position < screenPosition) {
+    left.classList.add('showLeft');
+    right.classList.add('showRight');
+    left2.classList.add('showLeft2')
+  }
+  else {
+    left.classList.remove('showLeft');
+    right.classList.remove('showRight');
+    left2.classList.remove('showLeft2')
+  }
+}
+
+window.addEventListener('scroll', scrollAppear);
+
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -50,8 +72,4 @@ function backAnim(){
     setTimeout(backAnim, 1000);
   }
 }
-backButton.addEventListener('click', backAnim);
-
-
-
 

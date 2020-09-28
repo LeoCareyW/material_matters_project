@@ -10,19 +10,19 @@
 
 <div class="dropDown-wrapper">
   <input type="checkbox" id="dropDown-toggle">
-  <label for="dropDown-toggle" class="dropDown-toggle-label">Menu</label>
+  <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
   <div class="dropDown">
     <%= link_to blogs_path do %>
     <input type="radio" id="option-1" name="options">
-    <label for="option-1">Blogs</label>
+    <label for="option-1">blogs</label>
     <% end %>
     <%= link_to gatherings_path do %>
     <input type="radio" id="option-2" name="options">
-    <label for="option-2">Events</label>
+    <label for="option-2">events</label>
     <% end %>
     <%= link_to partners_path do %>
     <input type="radio" id="option-3" name="options">
-    <label for="option-3">Partners</label>
+    <label for="option-3">partners</label>
     <% end %>
   </div>
 </div>
@@ -35,6 +35,7 @@
           <div class="team-image">
             <%= cl_image_tag team.photos[0].key %>
           </div>
+
           <p class="team-member-name"><%= link_to "#{team.name}", team_path(team) %> |  <span class="role"><%= team.role %></span> </p>
             <p>Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industry's
