@@ -1,47 +1,134 @@
-.blog-photo-one {
-  img {
-    height: 80%;
-    width: 80%;
-    object-fit: cover;
-  }
-}
+// .blog-photo-one {
+//   img {
+//     height: 80%;
+//     width: 80%;
+//     object-fit: cover;
+//   }
+// }
 
-.blog-photo-two {
-  img {
-    height: 40%;
-    width: 40%;
-    object-fit: cover;
-  }
-}
+// .blog-photo-two {
+//   img {
+//     height: 40%;
+//     width: 40%;
+//     object-fit: cover;
+//   }
+// }
 
 .blog-show-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  width: 60%;
+  margin-right: 15vw;
+  margin-left: 15vw;
   text-align: center;
 }
 
-.blog-show-content {
-  margin-right: 10%;
-  margin-left: 10%;
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-}
+// .blog-show-content {
+//   margin-right: 10%;
+//   margin-left: 10%;
+//   display: flex;
+//   justify-content: space-around;
+//   text-align: center;
+// }
 
-.blog-show-title {
-
-}
-
-.laxy {
-  display: none;
-}
 
 .parent-blog-show-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 
 }
+
+// ---------------------------------------
+#banner {
+  height: 50vh;
+  background-size: cover;
+  object-fit: cover;
+}
+section > h2{
+  text-align: center;
+  padding: 2em 0;
+  font-size: 2.5em;
+}
+section > .row {
+  display: flex;
+  align-item:center;
+  justify-content: center;
+  margin: 2em;
+}
+section > .row > div > img {
+  width: 800px;
+}
+section > .row > #left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  opacity:0;
+  transform: translateY(40px);
+  transition: 0.5s all ease-in-out;
+}
+section > .row > #right {
+  opacity:0;
+  transform: translateX(140px);
+  transition: 0.9s all ease-in-out;
+}
+
+
+section > .row2 > #left2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  opacity:0;
+  transform: translateY(40px);
+  transition: 0.5s all ease-in-out;
+}
+
+section > .row2 > #left2.showLeft2 {
+  opacity:1;
+  transform: translateY(0px);
+}
+
+section > .row2 > #left2 > h2 {
+  font-size: 1.8em;
+  margin: 0 0 1em 0;
+  opacity:0;
+}
+
+section > .row2 > #left2 > p {
+  font-size: 1.5em;
+}
+
+
+section > .row > #left.showLeft {
+  opacity:1;
+  transform: translateY(0px);
+}
+section > .row > #right.showRight {
+  opacity:1;
+  transform: translateX(0px);
+}
+section > .row > #left > h2 {
+  font-size: 1.8em;
+  margin: 0 0 1em 0;
+}
+section > .row > #left > p {
+  font-size: 1.5em;
+}
+
+section#empty {
+  height: 50vh;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+footer {
+  background: #3c3c3c;
+  color:#fff;
+  text-align:center;
+  padding: 10px;
+}
+// ---------------------------------------
 
 @media only screen and (max-width: 1390px) {
   .blog-show-container {
