@@ -1,4 +1,31 @@
+<div class="back-button">
+  <%= link_to blogs_path do %>
+  <div class="arrow-wrap">
+    <span class="arrow-part-1"></span>
+    <span class="arrow-part-2"></span>
+    <span class="arrow-part-3"></span>
+  </div>
+  <% end %>
+</div>
 
+<div class="dropDown-wrapper">
+  <input type="checkbox" id="dropDown-toggle">
+  <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
+  <div class="dropDown">
+    <%= link_to gatherings_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-1">events</label>
+    <% end %>
+    <%= link_to partners_path do %>
+    <input type="radio" id="option-2" name="options">
+    <label for="option-2">partners</label>
+    <% end %>
+    <%= link_to teams_path do %>
+    <input type="radio" id="option-3" name="options">
+    <label for="option-3">team</label>
+    <% end %>
+  </div>
+</div>
 <div class="parent-blog-show-container">
   <div class="blog-show-container">
 <div id="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1494236581341-7d38b2e7d824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2144&q=80)"></div>
@@ -15,6 +42,8 @@
 <div class="row2">
   <div id="left2">
     <h2> <%= @blog.date %> </h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas neque totam dolorum quia! Non accusamus possimus tempora repellendus repellat nihil dolore, facere qui quasi labore praesentium tempore quisquam ratione voluptas?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas neque totam dolorum quia! Non accusamus possimus tempora repellendus repellat nihil dolore, facere qui quasi labore praesentium tempore quisquam ratione voluptas?</p>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas neque totam dolorum quia! Non accusamus possimus tempora repellendus repellat nihil dolore, facere qui quasi labore praesentium tempore quisquam ratione voluptas?</p>
   </div>
 </div>
