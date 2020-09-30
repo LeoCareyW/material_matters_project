@@ -55,6 +55,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :date, :content, :mp3, photos: [])
+    params.require(:blog).permit(:title, :date, :content, :contentMain, :mp3, photos: [])
   end
 end
