@@ -2,6 +2,7 @@
   <%= simple_form_for(@blog) do |f| %>
     <%= f.input :title %>
     <%= f.input :content %>
+    <%= f.input :contentMain %>
     <%= f.input :date %>
     <%= f.input :photo, as: :file, input_html: { multiple: true } %>
     <%= f.file_field :mp3 %>
