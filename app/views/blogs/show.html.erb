@@ -29,9 +29,13 @@
 <div class="parent-blog-show-container">
   <div class="blog-show-container">
 <div id="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1494236581341-7d38b2e7d824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2144&q=80)"></div>
-
+<%= cl_image_tag @blog.photos[0] %>
 <section>
   <h2><%= @blog.title %></h2>
+  <% if @blog.mp3_file_name != nil %>
+        <%= audio_tag @blog.mp3, class: "audio-play" %>
+        <p class="btn btn-primary audioButton">Play</p>
+      <% end %>
   <div class="row">
     <div id="left">
       <h2> <%= @blog.date %> </h2>
@@ -46,18 +50,11 @@
 
   </div>
 </div>
-
-
 </section>
-
-<section id="empty">space to scroll</section>
-
-<footer>
-  <p>Images from pexels</p>
    <% if policy(Blog).destroy? %>
       <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>
       <%= link_to "Edit Blog", edit_blog_path(@blog) %>
   <% end %>
-</footer>
+
   </div>
 </div>
