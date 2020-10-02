@@ -51,15 +51,6 @@ ActiveRecord::Schema.define(version: 2020_09_30_165531) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.string "type"
-    t.text "description"
-    t.date "date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "gatherings", force: :cascade do |t|
     t.string "title"
     t.string "category"

@@ -32,9 +32,11 @@
     <div class="team-container">
       <% @teams.each do |team| %>
         <div class="team-member">
-          <div class="team-image">
-            <%= cl_image_tag team.photos[0].key %>
-          </div>
+          <% if @teams[0].photos[0] %>
+            <div class="team-image">
+              <%= cl_image_tag team.photos[0].key %>
+            </div>
+          <% end %>
 
           <p class="team-member-name"><%= link_to "#{team.name}", team_path(team) %> |  <span class="role"><%= team.role %></span> </p>
             <p>Lorem Ipsum is simply dummy text of the printing and

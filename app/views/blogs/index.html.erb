@@ -35,7 +35,7 @@
 </div>
 
 <div class="blog-show-container">
-  <% if @blogs[0] %>
+  <% if @blogs[0].photos[0] %>
     <%= cl_image_tag @blogs[0].photos[0].key %>
     <div class="main-blog-index-title"><%= link_to @blogs[0].title, blog_path(@blogs[0]) %> </div>
   <% end %>
@@ -48,9 +48,11 @@
 
         <div class="card-front">
           <figure>
-            <div class="img-bg"></div>
-            <%= cl_image_tag blog.photos[2].key %>
+            <% if @blogs[0].photos[0] %>
+              <div class="img-bg"></div>
+              <%= cl_image_tag blog.photos[2].key %>
               <figcaption class="blog-card-title"><%= blog.title %>  |  <%= blog.date %></figcaption>
+            <% end %>
           </figure>
           <ul class="blog-card-content">
             <% if blog.content %>
@@ -60,8 +62,10 @@
         </div>
         <div class="card-back">
           <figure>
-            <div class="img-bg"></div>
-            <%= cl_image_tag blog.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
+            <% if @blogs[0].photos[0] %>
+              <div class="img-bg"></div>
+              <%= cl_image_tag blog.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
+            <% end %>
           </figure>
 
           <button class="blog-read-button"><%= link_to "Read", blog_path(blog) %></button>
