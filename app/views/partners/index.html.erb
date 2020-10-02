@@ -47,10 +47,10 @@
   <div class="center-container-logout">
     <% if policy(Partner).new? %>
       <%= link_to "New Partner", new_partner_path %>
+      <ol>
+        <% @partners.each do |partner| %>
+        <li><%= link_to "#{partner.name}", partner_path(partner) %></li>
+        <% end %>
+      </ol>
     <% end %>
-    <ol>
-      <% @partners.each do |partner| %>
-      <li><%= link_to "#{partner.name}", partner_path(partner) %></li>
-      <% end %>
-    </ol>
 </div>

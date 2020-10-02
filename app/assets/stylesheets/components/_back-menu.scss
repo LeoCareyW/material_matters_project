@@ -111,3 +111,27 @@
     opacity: 1;
     background-color: rgba(180,180,180,.1);
 }
+
+
+@media only screen and (max-width: 1390px) {
+  .dropDown {
+    left: 4vw;
+  }
+}
+
+@media only screen and (max-width: 1299px) {
+  .dropDown {
+    left: 3vw;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .dropDown {
+    background: black;
+    border-radius: 18px;
+  }
+
+  .dropDown label {
+    color: white;
+    }
+  }
