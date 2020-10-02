@@ -39,7 +39,7 @@ Same cards as blog posts
 </div>
 
 <div class="blog-show-container">
-  <% if @gatherings[0] %>
+  <% if @gatherings[0].photos[0] %>
     <%= cl_image_tag @gatherings[0].photos[0].key %>
     <div class="main-blog-index-title"><%= link_to @gatherings[0].title, gathering_path(@gatherings[0]) %> </div>
   <% end %>

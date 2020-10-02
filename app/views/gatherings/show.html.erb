@@ -32,7 +32,9 @@
 
 <div class="parent-blog-show-container">
   <div class="blog-show-container">
-<%= cl_image_tag @gathering.photos[0].key %>
+  <% if @gatherings.photos[0] %>
+    <%= cl_image_tag @gathering.photos[0].key %>
+  <% end %>
 <section>
   <h2><%= @gathering.title %></h2>
   <h6><%= @gathering.category %></h6>
@@ -41,7 +43,9 @@
     <div id="left">
       <p><%= @gathering.description %></p>
     </div>
-  <div id="right"><%= cl_image_tag @gathering.photos[1].key %></div>
+    <% if gathering.photos[1] %>
+      <div id="right"><%= cl_image_tag @gathering.photos[1].key %></div>
+    <% end %>
 </div>
 <div class="row2">
   <div id="left2">
