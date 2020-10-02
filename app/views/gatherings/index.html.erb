@@ -39,7 +39,7 @@ Same cards as blog posts
 </div>
 
 <div class="blog-show-container">
-  <% if @gatherings[0] %>
+  <% if @gatherings[0].photos[0] %>
     <%= cl_image_tag @gatherings[0].photos[0].key %>
     <div class="main-blog-index-title"><%= link_to @gatherings[0].title, gathering_path(@gatherings[0]) %> </div>
   <% end %>
@@ -52,9 +52,11 @@ Same cards as blog posts
 
         <div class="card-front">
           <figure>
-            <div class="img-bg"></div>
-              <%= cl_image_tag gathering.photos[2].key %>
-              <figcaption class="blog-card-title"><%= gathering.title %>  |  <%= gathering.date %></figcaption>
+            <% if @gatherings[0].photos[0] %>
+              <div class="img-bg"></div>
+                <%= cl_image_tag gathering.photos[2].key %>
+                <figcaption class="blog-card-title"><%= gathering.title %>  |  <%= gathering.date %></figcaption>
+            <% end %>
           </figure>
           <ul class="blog-card-content">
             <% if gathering.description %>
@@ -64,8 +66,10 @@ Same cards as blog posts
         </div>
         <div class="card-back">
           <figure>
-            <div class="img-bg"></div>
-            <%= cl_image_tag gathering.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
+            <% if @gatherings[0].photos[0] %>
+              <div class="img-bg"></div>
+              <%= cl_image_tag gathering.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
+            <% end %>
           </figure>
 
           <button class="blog-read-button"><%= link_to "See more", gathering_path(gathering) %></button>
