@@ -38,14 +38,12 @@ Same cards as blog posts
   <h1 class="blog-index-title">Events</h1>
 </div>
 
-<div class="main-blog-container">
+<div class="blog-show-container">
   <% if @gatherings[0] %>
     <%= cl_image_tag @gatherings[0].photos[0].key %>
     <div class="main-blog-index-title"><%= link_to @gatherings[0].title, gathering_path(@gatherings[0]) %> </div>
   <% end %>
 </div>
-
-
 
 <div class="blog-item-container">
   <% @gatherings.each do |gathering| %>
