@@ -1,15 +1,56 @@
-<h1> Partners </h1>
-<p><%= link_to "Home", root_path %></p>
-<ol>
-  <% @partners.each do |partner| %>
-  <li><%= link_to "#{partner.name}", partner_path(partner) %></li>
+<div class="back-button">
+  <%= link_to root_path do %>
+    <div class="arrow-wrap">
+      <span class="arrow-part-1"></span>
+      <span class="arrow-part-2"></span>
+      <span class="arrow-part-3"></span>
+    </div>
   <% end %>
-</ol>
+</div>
 
-<p>Know someone interesting?</p>
-<p>contact us on the email below</p>
+<div class="dropDown-wrapper">
+  <input type="checkbox" id="dropDown-toggle">
+  <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
+  <div class="dropDown">
+    <%= link_to blogs_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-1">blogs</label>
+    <% end %>
+    <%= link_to gatherings_path do %>
+    <input type="radio" id="option-2" name="options">
+    <label for="option-2">events</label>
+    <% end %>
+    <%= link_to teams_path do %>
+    <input type="radio" id="option-3" name="options">
+    <label for="option-3">team</label>
+    <% end %>
+  </div>
+</div>
 
-<% if policy(Partner).new? %>
-<%= link_to "New Partner", new_partner_path %>
-<% end %>
+<h1 class="center-container"> Our Partners </h1>
+  <div class="fade-in-1">
+      <div class="partner-container">
+        <% @partners.each do |partner| %>
+          <div class="partner-member">
+            <% if partner.photos[0] %>
+              <div class="team-image">
+                <%= cl_image_tag partner.photos[0].key %>
+              </div>
+            <% end %>
 
+            <p class="team-member-name"> <%= partner.name %> </p>
+              <p><%= partner.description %></p>
+            </div>
+        <% end %>
+    </div>
+  </div>
+  <div class="center-container-logout">
+    <% if policy(Partner).new? %>
+      <%= link_to "New Partner", new_partner_path %>
+    <% end %>
+    <ol>
+      <% @partners.each do |partner| %>
+      <li><%= link_to "#{partner.name}", partner_path(partner) %></li>
+      <% end %>
+    </ol>
+</div>

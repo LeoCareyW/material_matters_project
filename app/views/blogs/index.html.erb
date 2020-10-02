@@ -35,8 +35,8 @@
 </div>
 
 <div class="main-blog-container">
-  <%= cl_image_tag @blogs[0].photos[0].key %>
   <% if @blogs[0] %>
+    <%= cl_image_tag @blogs[0].photos[0].key %>
     <div class="main-blog-index-title"><%= link_to @blogs[0].title, blog_path(@blogs[0]) %> </div>
   <% end %>
 </div>

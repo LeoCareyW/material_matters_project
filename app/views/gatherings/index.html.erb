@@ -39,10 +39,12 @@ Same cards as blog posts
 </div>
 
 <div class="main-blog-container">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1582107626018-42c0558ac409?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80)">
-    <%= link_to @gatherings[0].title, gathering_path(@gatherings[0]) %>
-  </div>
+  <% if @gatherings[0] %>
+    <%= cl_image_tag @gatherings[0].photos[0].key %>
+    <div class="main-blog-index-title"><%= link_to @gatherings[0].title, gathering_path(@gatherings[0]) %> </div>
+  <% end %>
 </div>
+
 
 
 <div class="blog-item-container">
@@ -53,7 +55,7 @@ Same cards as blog posts
         <div class="card-front">
           <figure>
             <div class="img-bg"></div>
-            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Brohm Lake">
+              <%= cl_image_tag gathering.photos[2].key %>
               <figcaption class="blog-card-title"><%= gathering.title %>  |  <%= gathering.date %></figcaption>
           </figure>
           <ul class="blog-card-content">
@@ -65,7 +67,7 @@ Same cards as blog posts
         <div class="card-back">
           <figure>
             <div class="img-bg"></div>
-            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Brohm Lake">
+            <%= cl_image_tag gathering.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
           </figure>
 
           <button class="blog-read-button"><%= link_to "See more", gathering_path(gathering) %></button>

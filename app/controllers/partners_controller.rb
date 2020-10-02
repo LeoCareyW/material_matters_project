@@ -34,7 +34,7 @@ class PartnersController < ApplicationController
   def destroy
     @partner = Partner.find(params[:id])
     @partner.destroy
-    redirect_to partners_path, notice: "The partner #{@partner.title} has been deleted."
+    redirect_to partners_path, notice: "The partner #{@partner.name} has been deleted."
   end
 
   def update

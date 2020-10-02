@@ -1,13 +1,56 @@
-<div>
-  <p><%= @gathering.title %></p>
-  <p><%= @gathering.category %></p>
-  <p><%= @gathering.description %></p>
-  <p><%= @gathering.date %></p>
+
+<!-- //---------------------->
+
+<div class="back-button">
+  <%= link_to gatherings_path do %>
+  <div class="arrow-wrap">
+    <span class="arrow-part-1"></span>
+    <span class="arrow-part-2"></span>
+    <span class="arrow-part-3"></span>
+  </div>
+  <% end %>
 </div>
 
-<p><%= link_to "Back to events", gatherings_path %></p>
+<div class="dropDown-wrapper">
+  <input type="checkbox" id="dropDown-toggle">
+  <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
+  <div class="dropDown">
+    <%= link_to blogs_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-1">blogs</label>
+    <% end %>
+    <%= link_to partners_path do %>
+    <input type="radio" id="option-2" name="options">
+    <label for="option-2">partners</label>
+    <% end %>
+    <%= link_to teams_path do %>
+    <input type="radio" id="option-3" name="options">
+    <label for="option-3">team</label>
+    <% end %>
+  </div>
+</div>
 
-<% if policy(Gathering).destroy? %>
-  <%= link_to "Remove Event from Site", gathering_path(@gathering), :method => :delete, data: { confirm: 'Are you sure?'} %>
-  <%= link_to "Edit Event", edit_gathering_path(@gathering) %>
-<% end %>
+<div class="parent-blog-show-container">
+  <div class="blog-show-container">
+<%= cl_image_tag @gathering.photos[0].key %>
+<section>
+  <h2><%= @gathering.title %></h2>
+  <h6><%= @gathering.category %></h6>
+  <h6> <%= @gathering.date %> </h6>
+  <div class="row">
+    <div id="left">
+      <p><%= @gathering.description %></p>
+    </div>
+  <div id="right"><%= cl_image_tag @gathering.photos[1].key %></div>
+</div>
+<div class="row2">
+  <div id="left2">
+  </div>
+</div>
+</section>
+  <% if policy(Gathering).destroy? %>
+    <%= link_to "Remove Event from Site", gathering_path(@gathering), :method => :delete, data: { confirm: 'Are you sure?'} %>
+    <%= link_to "Edit Event", edit_gathering_path(@gathering) %>
+  <% end %>
+  </div>
+</div>
