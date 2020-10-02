@@ -21,8 +21,8 @@
   margin-right: 20vw;
   margin-left: 20vw;
   text-align: center;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-decoration: none;
+  transition: 0.5s;
     img {
     background-size: cover;
     max-height: 50vh;
@@ -30,6 +30,9 @@
   }
   a {
     color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-weight: bold;
   }
 }
 
@@ -164,6 +167,10 @@ footer {
     margin-right: 12vw;
     margin-left: 12vw;
   }
+
+  section > .row > div > img {
+    width: 57vw;
+  }
 }
 
 @media only screen and (max-width: 1299px) {
@@ -177,6 +184,11 @@ footer {
   .blog-show-container {
     margin-right: 7vw;
     margin-left: 7vw;
+    margin-top: 7vh;
+  }
+
+  section > .row > div > img {
+    width: 68vw;
   }
 }
 
@@ -185,11 +197,20 @@ footer {
     margin-right: 3vw;
     margin-left: 3vw;
   }
+
+  section > .row > div > img {
+    width: 72vw;
+    height: 44vh;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .blog-show-container {
     margin-right: 0vw;
     margin-left: 0vw;
+  }
+
+  section > .row > div > img {
+    width: 93vw;
   }
 }

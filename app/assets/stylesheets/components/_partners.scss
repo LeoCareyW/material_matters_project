@@ -21,3 +21,25 @@
     color: black;
   }
 }
+
+
+
+@media only screen and (max-width: 1210px) {
+
+  .partner-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 860px) {
+
+  .partner-container {
+    margin: 8%;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+.partner-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

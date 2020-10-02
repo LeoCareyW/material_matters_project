@@ -76,3 +76,10 @@
     left: 80%;
   }
 }
+
+@media only screen and (max-width: 600px) {
+
+  .back-button .arrow-wrap span {
+    left: 19px;
+  }
+}
