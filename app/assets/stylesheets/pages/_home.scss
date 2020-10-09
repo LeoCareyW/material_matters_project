@@ -2,6 +2,14 @@ body {
   background-color: white;
 }
 
+.banner-photo {
+  img {
+    width: 23vw;
+    height: 20vh;
+  }
+  margin-bottom: 5vh;
+}
+
 .banner-title-container {
   display: flex;
   justify-content: space-between;
@@ -36,7 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: 20vh;
+  margin-top: 10vh;
 }
 
 .log-out-button {
@@ -63,3 +71,13 @@ body {
   justify-content: space-between;
 }
 
+
+
+@media only screen and (max-width: 600px) {
+  .banner-photo {
+    img {
+      width: 67vw;
+      height: 20vh;
+    }
+  }
+}
