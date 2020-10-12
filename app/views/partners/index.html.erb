@@ -37,8 +37,7 @@
                 <%= cl_image_tag partner.photos[0].key %>
               </div>
             <% end %>
-
-            <p class="team-member-name"> <%= partner.name %> </p>
+            <p class="team-member-name"> <%= link_to partner.name, partner_path(partner) %> </p>
               <p><%= partner.description %></p>
             </div>
         <% end %>
