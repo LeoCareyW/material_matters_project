@@ -34,9 +34,12 @@
 <section>
   <h2><%= @partner.name %></h2>
 
+<!-- short description does not show -->
+
+
   <div class="row">
     <div id="left">
-      <p><p><%= @partner.description %></p>
+      <p class="partner-show-description"><%= @partner.description %></p>
     </div>
     <% if @partner.photos[1] %>
   <div id="right"><%= cl_image_tag @partner.photos[1].key %></div>
