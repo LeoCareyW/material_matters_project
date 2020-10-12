@@ -1,14 +1,59 @@
-<div>
-  <p><%= @partner.name %></p>
-  <p><%= @partner.description %></p>
-
+<div class="back-button">
+  <%= link_to partners_path do %>
+  <div class="arrow-wrap">
+    <span class="arrow-part-1"></span>
+    <span class="arrow-part-2"></span>
+    <span class="arrow-part-3"></span>
+  </div>
+  <% end %>
 </div>
 
- <%= link_to "Back to all partners", partners_path %>
+<div class="dropDown-wrapper">
+  <input type="checkbox" id="dropDown-toggle">
+  <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
+  <div class="dropDown">
+    <%= link_to gatherings_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-1">events</label>
+    <% end %>
+    <%= link_to blogs_path do %>
+    <input type="radio" id="option-2" name="options">
+    <label for="option-2">blogs</label>
+    <% end %>
+    <%= link_to teams_path do %>
+    <input type="radio" id="option-3" name="options">
+    <label for="option-3">team</label>
+    <% end %>
+  </div>
+</div>
+<div class="parent-blog-show-container">
+  <div class="blog-show-container">
+    <% if @partner.photos[0] %>
+      <%= cl_image_tag @partner.photos[0].key %>
+    <% end %>
+<section>
+  <h2><%= @partner.name %></h2>
 
-<% if policy(Partner).destroy? %>
-  <%= link_to "Delete Partner", partner_path(@partner), :method => :delete, data: { confirm: 'Are you sure?'} %>
-  <%= link_to "Edit Partner", edit_partner_path(@partner) %>
-<% end %>
-
-
+  <div class="row">
+    <div id="left">
+      <p><p><%= @partner.description %></p>
+    </div>
+    <% if @partner.photos[1] %>
+  <div id="right"><%= cl_image_tag @partner.photos[1].key %></div>
+  <div id="right">
+    <iframe src=""></iframe>
+  </div>
+    <% end %>
+</div>
+<div class="row2">
+  <div id="left2">
+    <p>Perhaps video embed here</p>
+  </div>
+</div>
+</section>
+   <% if policy(Partner).destroy? %>
+    <%= link_to "Delete Partner", partner_path(@partner), :method => :delete, data: { confirm: 'Are you sure?'} %>
+    <%= link_to "Edit Partner", edit_partner_path(@partner) %>
+   <% end %>
+  </div>
+</div>
