@@ -53,3 +53,97 @@
       </ol>
     <% end %>
 </div>
+
+<!--
+------------------------- -->
+
+
+<div class="back-button">
+  <%= link_to root_path do %>
+  <div class="arrow-wrap">
+    <span class="arrow-part-1"></span>
+    <span class="arrow-part-2"></span>
+    <span class="arrow-part-3"></span>
+  </div>
+  <% end %>
+</div>
+
+<div class="dropDown-wrapper">
+  <input type="checkbox" id="dropDown-toggle">
+  <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
+  <div class="dropDown">
+    <%= link_to gatherings_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-1">events</label>
+    <% end %>
+    <%= link_to partners_path do %>
+    <input type="radio" id="option-2" name="options">
+    <label for="option-2">partners</label>
+    <% end %>
+    <%= link_to teams_path do %>
+    <input type="radio" id="option-3" name="options">
+    <label for="option-3">team</label>
+    <% end %>
+  </div>
+</div>
+
+  <div class="blog-title-container">
+    <h1 class="blog-index-title">Spotlight</h1>
+  </div>
+
+  <div class="blog-show-container">
+    <% if @blogs[0] && @blogs[0].photos[0] %>
+      <%= cl_image_tag @blogs[0].photos[0].key %>
+      <div class="main-blog-index-title"><%= link_to @blogs[0].title, blog_path(@blogs[0]) %> </div>
+    <% end %>
+  </div>
+
+  <div class="blog-item-container">
+    <% @blogs.each do |blog| %>
+      <div class="flip-card-container">
+        <div class="flip-card">
+
+          <div class="card-front">
+            <figure>
+              <% if blog.photos[2] %>
+                <div class="img-bg"></div>
+                <%= cl_image_tag blog.photos[2].key %>
+                <figcaption class="blog-card-title"><%= blog.title %>  |  <%= blog.date %></figcaption>
+              <% end %>
+            </figure>
+            <ul class="blog-card-content">
+              <% if blog.content %>
+              <li><%=blog.content %></li>
+               <% end %>
+            </ul>
+          </div>
+          <div class="card-back">
+            <figure>
+              <% if blog.photos[2] %>
+                <div class="img-bg"></div>
+                <%= cl_image_tag blog.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
+              <% end %>
+            </figure>
+
+            <button class="blog-read-button"><%= link_to "Read", blog_path(blog) %></button>
+
+            <div class="design-container">
+              <span class="design design--1"></span>
+              <span class="design design--2"></span>
+              <span class="design design--3"></span>
+              <span class="design design--4"></span>
+              <span class="design design--5"></span>
+              <span class="design design--6"></span>
+              <span class="design design--7"></span>
+              <span class="design design--8"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if policy(Blog).new? %>
+  <%= link_to "New Blog", new_blog_path %>
+  <% end %>
+
