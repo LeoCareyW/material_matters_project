@@ -7,8 +7,12 @@
 
 .center-container-logout {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 20px;
+}
+
+.fa-linkedin-in {
+  color: #0277B5
 }
 
 .home-container {
@@ -50,8 +54,20 @@
   }
 }
 
+.team-description {
+  margin-top: 20px;
+}
+
 .role {
   color: gray;
+}
+
+.social-media {
+  a {
+    color: black;
+    font-size: 20px;
+    font-weight: 200;
+  }
 }
 
 @media only screen and (max-width: 1075px) {

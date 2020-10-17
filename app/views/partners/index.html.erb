@@ -1,4 +1,4 @@
-<div class="back-button">
+<!-- <div class="back-button">
   <%= link_to root_path do %>
     <div class="arrow-wrap">
       <span class="arrow-part-1"></span>
@@ -52,7 +52,7 @@
         <% end %>
       </ol>
     <% end %>
-</div>
+</div> -->
 
 <!--
 ------------------------- -->
@@ -91,41 +91,35 @@
     <h1 class="blog-index-title">Spotlight</h1>
   </div>
 
-  <div class="blog-show-container">
-    <% if @blogs[0] && @blogs[0].photos[0] %>
-      <%= cl_image_tag @blogs[0].photos[0].key %>
-      <div class="main-blog-index-title"><%= link_to @blogs[0].title, blog_path(@blogs[0]) %> </div>
-    <% end %>
-  </div>
 
   <div class="blog-item-container">
-    <% @blogs.each do |blog| %>
+    <% @partners.each do |partner| %>
       <div class="flip-card-container">
         <div class="flip-card">
 
           <div class="card-front">
             <figure>
-              <% if blog.photos[2] %>
+              <% if partner.photos[2] %>
                 <div class="img-bg"></div>
-                <%= cl_image_tag blog.photos[2].key %>
-                <figcaption class="blog-card-title"><%= blog.title %>  |  <%= blog.date %></figcaption>
+                <%= cl_image_tag partner.photos[2].key %>
+                <figcaption class="blog-card-title"><%= partner.name %> %></figcaption>
               <% end %>
             </figure>
             <ul class="blog-card-content">
-              <% if blog.content %>
-              <li><%=blog.content %></li>
+              <% if partner.description %>
+              <li><%=partner.description %></li>
                <% end %>
             </ul>
           </div>
           <div class="card-back">
             <figure>
-              <% if blog.photos[2] %>
+              <% if partner.photos[2] %>
                 <div class="img-bg"></div>
-                <%= cl_image_tag blog.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
+                <%= cl_image_tag partner.photos[2].key, :transformation=>[ {:angle=>["vflip", 180]}] %>
               <% end %>
             </figure>
 
-            <button class="blog-read-button"><%= link_to "Read", blog_path(blog) %></button>
+            <button class="blog-read-button"><%= link_to "Read", partner_path(partner) %></button>
 
             <div class="design-container">
               <span class="design design--1"></span>
@@ -142,8 +136,12 @@
       </div>
     <% end %>
   </div>
+  <div class="center-container-logout">
+    <% if policy(@partners).new? %>
+      <div class="admin-options">
+        <%= link_to "Add Partner", new_partner_path %>
+      </div>
+    <% end %>
+</div>
 
-  <% if policy(Blog).new? %>
-  <%= link_to "New Blog", new_blog_path %>
-  <% end %>
 

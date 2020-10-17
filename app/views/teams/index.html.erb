@@ -32,14 +32,17 @@
     <div class="team-container">
       <% @teams.each do |team| %>
         <div class="team-member">
-          <% if @teams[0].photos[0] %>
+          <% if team.photos[0] %>
             <div class="team-image">
               <%= cl_image_tag team.photos[0].key %>
             </div>
           <% end %>
 
           <p class="team-member-name"><%= link_to "#{team.name}", team_path(team) %> |  <span class="role"><%= team.role %></span> </p>
-            <p>Lorem Ipsum is simply dummy text of the printing and
+          <% if team.linkedin %>
+          <div class="social-media"><a href=<%= team.linkedin %> target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+          <% end %>
+            <div class="team-description"><p>Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when an unknown
             printer took a galley of type and scrambled it to make a
@@ -49,13 +52,16 @@
             the 1960s with the release of Letraset sheets containing
             Lorem Ipsum passages, and more recently with desktop
             publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum</p>
+            versions of Lorem Ipsum</p></div>
           </div>
       <% end %>
     </div>
   </div>
+
   <div class="center-container-logout">
     <% if policy(Team).new? %>
-    <%= link_to "New Member", new_team_path %>
+      <div class="admin-options">
+        <%= link_to "New Member", new_team_path %>
+      </div>
     <% end %>
 </div>
