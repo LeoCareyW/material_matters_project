@@ -1,3 +1,16 @@
+.admin-options {
+  a {
+    color: black;
+    text-shadow: none;
+    font-weight: 200;
+  }
+}
+
+iframe {
+  width: 53vw;
+  height: 45vh;
+}
+
 .partner-container {
   display: flex;
   justify-content: space-between;
@@ -24,14 +37,6 @@
 
 .partner-show-description {
   margin-top: 60px;
-}
-
-.social-media {
-  a {
-    color: black;
-    font-size: 20px;
-    font-weight: 200;
-  }
 }
 
 

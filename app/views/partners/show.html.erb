@@ -33,7 +33,6 @@
     <% end %>
 <section>
   <h2><%= @partner.name %></h2>
-  <div class="social-media"><a href="https://www.linkedin.com/in/leo-carey-williams/" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
 
 <!-- short description does not show -->
 
@@ -43,23 +42,23 @@
       <p class="partner-show-description"><%= @partner.description %></p>
     </div>
     <% if @partner.photos[1] %>
-  <div id="right"><%= cl_image_tag @partner.photos[1].key %></div>
+    <div id="right"><%= cl_image_tag @partner.photos[1].key %></div>
     <% end %>
     <div id="right">
-    <iframe src="https://www.youtube.com/watch?v=vmd1qMN5Yo0&ab_channel=thelonelyisland" title="Interview" width="300"
-    height="200"></iframe>
+    <iframe src=<%= @partner.link %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   </div>
 </div>
 <div class="row2">
   <div id="left2">
-    <p>Perhaps video embed here</p>
   </div>
 </div>
-</section>
-   <% if policy(Partner).destroy? %>
-    <%= link_to "Delete Partner", partner_path(@partner), :method => :delete, data: { confirm: 'Are you sure?'} %>
-    <%= link_to "Edit Partner", edit_partner_path(@partner) %>
-   <% end %>
+  </section>
+    <div class="admin-options">
+     <% if policy(Partner).destroy? %>
+      <%= link_to "Delete Partner", partner_path(@partner), :method => :delete, data: { confirm: 'Are you sure?'} %> |
+      <%= link_to "Edit Partner", edit_partner_path(@partner) %>
+     <% end %>
+   </div>
   </div>
 </div>
