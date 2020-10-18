@@ -12,13 +12,13 @@
   <input type="checkbox" id="dropDown-toggle">
   <label for="dropDown-toggle" class="dropDown-toggle-label">MENU</label>
   <div class="dropDown">
-    <%= link_to gatherings_path do %>
-    <input type="radio" id="option-1" name="options">
-    <label for="option-1">events</label>
-    <% end %>
     <%= link_to blogs_path do %>
     <input type="radio" id="option-2" name="options">
-    <label for="option-2">blogs</label>
+    <label for="option-1">blogs</label>
+    <% end %>
+    <%= link_to gatherings_path do %>
+    <input type="radio" id="option-1" name="options">
+    <label for="option-2">events</label>
     <% end %>
     <%= link_to teams_path do %>
     <input type="radio" id="option-3" name="options">

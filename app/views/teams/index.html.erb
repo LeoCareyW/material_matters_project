@@ -22,7 +22,7 @@
     <% end %>
     <%= link_to partners_path do %>
     <input type="radio" id="option-3" name="options">
-    <label for="option-3">partners</label>
+    <label for="option-3">spotlight</label>
     <% end %>
   </div>
 </div>
@@ -39,9 +39,14 @@
           <% end %>
 
           <p class="team-member-name"><%= link_to "#{team.name}", team_path(team) %> |  <span class="role"><%= team.role %></span> </p>
-          <% if team.linkedin %>
-          <div class="social-media"><a href=<%= team.linkedin %> target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
-          <% end %>
+          <div class="social-media-container">
+            <% if team.linkedin %>
+              <div class="social-media"><a href=<%= team.linkedin %> target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+            <% end %>
+            <% if team.instagram %>
+              <div class="social-media"><a href=<%= team.instagram %> target="_blank"><i class="fab fa-instagram"></i></a></div>
+            <% end %>
+          </div>
             <div class="team-description"><p>Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when an unknown

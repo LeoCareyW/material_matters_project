@@ -20,6 +20,11 @@
   justify-content: space-around;
 }
 
+.social-media-container {
+  display: flex;
+  justify-content: center;
+}
+
 .team-container {
   display: flex;
   justify-content: space-between;
@@ -64,9 +69,10 @@
 
 .social-media {
   a {
-    color: black;
+    color: #DA426E;
     font-size: 20px;
     font-weight: 200;
+    margin-right: 10px;
   }
 }
 
