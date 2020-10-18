@@ -12,7 +12,29 @@
 }
 
 .fa-linkedin-in {
-  color: #0277B5
+  color: #0277B5;
+  font-size: 24px;
+  font-weight: 100;
+  transition: 0.3s;
+  text-shadow: none;
+}
+
+.fa-instagram {
+  color: #DA426E;
+  font-size: 24px;
+  font-weight: 100;
+  transition: 0.3s;
+  text-shadow: none;
+}
+
+.fa-linkedin-in:hover {
+  font-size: 26px;
+  margin: -1px;
+}
+
+.fa-instagram:hover {
+  font-size: 26px;
+  margin: -1px;
 }
 
 .home-container {
@@ -75,6 +97,7 @@
     margin-right: 10px;
   }
 }
+
 
 @media only screen and (max-width: 1075px) {
   .team-container {

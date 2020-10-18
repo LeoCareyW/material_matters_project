@@ -6,6 +6,10 @@
   }
 }
 
+.carousel-indicators li {
+  height: 0px
+}
+
 iframe {
   width: 53vw;
   height: 45vh;
@@ -37,6 +41,12 @@ iframe {
 
 .partner-show-description {
   margin-top: 60px;
+}
+
+.spotlight-img {
+  img {
+    border-radius: 50%;
+  }
 }
 
 
