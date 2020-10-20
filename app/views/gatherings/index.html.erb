@@ -38,11 +38,19 @@ Same cards as blog posts
   <h1 class="blog-index-title">Events</h1>
 </div>
 
+<div class="board-img">
+  <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.14_ykfitx.png">
+</div>
+
 <div class="blog-show-container">
   <% if @gatherings[0] && @gatherings[0].photos[0] %>
     <%= cl_image_tag @gatherings[0].photos[0].key %>
     <div class="main-blog-index-title"><%= link_to @gatherings[0].title, gathering_path(@gatherings[0]) %> </div>
   <% end %>
+  <div class="flowers">
+      <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.16_wnv8sa.png">
+      <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.19_ztonyr.png">
+    </div>
 </div>
 
 <div class="blog-item-container">
@@ -89,7 +97,16 @@ Same cards as blog posts
     </div>
   <% end %>
 </div>
+
+<div class="vase-img">
+  <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.12_fiwztx.png">
+</div>
+<div class="pillar-img">
+  <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.06_yqyvag.png">
+</div>
+<div class="admin-options">
  <% if policy(Gathering).new? %>
     <%= link_to "New Event", new_gathering_path %>
   <% end %>
+<div>
 

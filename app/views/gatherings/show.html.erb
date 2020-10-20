@@ -52,9 +52,18 @@
   </div>
 </div>
 </section>
-  <% if policy(Gathering).destroy? %>
-    <%= link_to "Remove Event from Site", gathering_path(@gathering), :method => :delete, data: { confirm: 'Are you sure?'} %>
-    <%= link_to "Edit Event", edit_gathering_path(@gathering) %>
-  <% end %>
+<div class="head-img">
+  <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209168/Screenshot_2020-10-20_at_16.52.00_qfhkta.png">
+</div>
+
+  <div class="big-vase-img">
+    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.09_fx4rww.png">
+  </div>
+  <div class="admin-options">
+    <% if policy(Gathering).destroy? %>
+      <%= link_to "Remove Event from Site", gathering_path(@gathering), :method => :delete, data: { confirm: 'Are you sure?'} %>
+      <%= link_to "Edit Event", edit_gathering_path(@gathering) %>
+    <% end %>
+  </div>
   </div>
 </div>

@@ -31,7 +31,7 @@
     <% if @partner.photos[0] %>
       <div class="spotlight-img">
         <%= cl_image_tag @partner.photos[0].key, :transformation=>[
-  {:width=>600, :height=>600, :gravity=>"face", :radius=>"max", :crop=>"fill"},
+  {:width=>300, :height=>300, :gravity=>"face", :radius=>"max", :crop=>"fill"},
   ] %>
       </div>
     <% end %>
@@ -46,7 +46,6 @@
             <% end %>
           </div>
 
-<!-- short description does not show -->
 
 
   <div class="row">
@@ -56,9 +55,16 @@
     <% if @partner.photos[1] %>
     <div id="right"><%= cl_image_tag @partner.photos[1].key %></div>
     <% end %>
-    <div id="right">
+  </div>
+    <div class="action-call">
       <% if @partner.link %>
-        <iframe src=<%= @partner.link %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div><p> Watch our video below! </p></div>
+      <% end %>
+    </div>
+    <div class="video-container">
+      <% if @partner.link %>
+        <div class="vid-description"> <%= @partner.videodescription %></div>
+        <div><iframe src=<%= @partner.link %> frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
       <% end %>
   </div>
 </div>
@@ -86,7 +92,6 @@
      </ol>
 
      <div class="carousel-inner" role="listbox">
-
        <% @partner.photos.each do |photo| %>
        <% if photo == @partner.photos[0] %>
        <div class="carousel-item active">

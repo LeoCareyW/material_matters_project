@@ -1,0 +1,98 @@
+.big-vase-img {
+  img {
+    height: 100px;
+    width: auto;
+    position: absolute;
+    left: 1vw;
+    transform: rotate(-20deg);
+    z-index: -1;
+  }
+}
+
+.board-img {
+  img {
+    height: 100px;
+    width: auto;
+    position: absolute;
+    top: 8vh;
+    right: 1vw;
+    transform: rotate(-20deg);
+    z-index: -1;
+  }
+}
+
+.flowers {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  img {
+    height: 65px;
+    width: auto;
+  }
+}
+
+.flowers-team {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 36vw;
+  padding-right: 36vw;
+  margin-top: -24px;
+  img {
+    height: 65px;
+    width: auto;
+    z-index: -1;
+  }
+}
+
+.head-img {
+  img {
+    height: 100px;
+    width: auto;
+    position: absolute;
+    right: 1vw;
+    transform: rotate(-20deg);
+    z-index: -1;
+  }
+}
+
+.pillar-img {
+  img {
+    height: 110px;
+    width: auto;
+    position: absolute;
+    left: 2vw;
+    transform: rotate(-10deg);
+    z-index: -1;
+  }
+}
+
+.portrait-img {
+  img {
+    height: 79px;
+    width: auto;
+    position: absolute;
+    top: 32vh;
+    left: 0vw;
+    transform: rotate(-13deg);
+    z-index: -1;
+  }
+}
+
+
+.vase-img {
+  img {
+  height: 98px;
+  width: auto;
+  right: 2vw;
+  position: absolute;
+  transform: rotate(13deg);
+  z-index: -1;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .vase-img {
+      display: none;
+  }
+}
