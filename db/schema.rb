@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_110152) do
+ActiveRecord::Schema.define(version: 2020_10_20_145745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_110152) do
     t.string "link"
     t.string "instagram"
     t.string "linkedin"
+    t.text "videodescription"
     t.index ["user_id"], name: "index_partners_on_user_id"
   end
 

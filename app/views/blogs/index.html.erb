@@ -34,12 +34,21 @@
     <h1 class="blog-index-title">Blogs</h1>
   </div>
 
+  <div class="board-img">
+    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.06_yqyvag.png">
+  </div>
+
   <div class="blog-show-container">
     <% if @blogs[0] && @blogs[0].photos[0] %>
       <%= cl_image_tag @blogs[0].photos[0].key %>
       <div class="main-blog-index-title"><%= link_to @blogs[0].title, blog_path(@blogs[0]) %> </div>
     <% end %>
+    <div class="flowers">
+      <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.16_wnv8sa.png">
+      <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.19_ztonyr.png">
+    </div>
   </div>
+
 
   <div class="blog-item-container">
     <% @blogs.each do |blog| %>
@@ -86,6 +95,14 @@
     <% end %>
   </div>
 
+  <div class="vase-img">
+    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209168/Screenshot_2020-10-20_at_16.52.03_iiw3qm.png">
+  </div>
+  <div class="pillar-img">
+    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.14_ykfitx.png">
+  </div>
+<div class="admin-options">
   <% if policy(Blog).new? %>
   <%= link_to "New Blog", new_blog_path %>
   <% end %>
+</div>

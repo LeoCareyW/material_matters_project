@@ -42,7 +42,7 @@
   align-items: center;
   margin-right: 9vw;
   margin-left: 9vw;
-  margin-top: 6vh;
+  margin-top: 1vh;
 }
 
 /* .flip-card-container */
@@ -421,11 +421,20 @@ button:focus+.design-container {
   }
 }
 
-@media only screen and (max-width: 967px) {
+@media only screen and (max-width: 650px) {
   .flip-card-container {
-    margin: 5px;
+    width: 153px;
+    height: 229px;
+    margin: 0;
+   }
+    body {
+    font-size: 0.8rem;
+    padding-bottom: 0px;
+      li {
+        font-size: 0.5rem;
+      }
+    }
   }
-}
 
 
 
