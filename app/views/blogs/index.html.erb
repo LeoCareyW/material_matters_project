@@ -49,6 +49,18 @@
     </div>
   </div>
 
+  <% if !@blogs[0] %>
+  <div class="blog-show-container">
+    <img src="https://images.unsplash.com/flagged/photo-1563258574-f7dbe336d56b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="come back soon">
+    <div class="main-blog-index-title"><p>We have no blogs at the moment, please come back soon!</p> </div>
+
+  <div class="flowers">
+    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.16_wnv8sa.png">
+    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.19_ztonyr.png">
+  </div>
+  </div>
+<% end %>
+
 
   <div class="blog-item-container">
     <% @blogs.each do |blog| %>
