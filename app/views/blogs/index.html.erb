@@ -34,30 +34,18 @@
     <h1 class="blog-index-title">Blogs</h1>
   </div>
 
-  <div class="board-img">
-    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.06_yqyvag.png">
-  </div>
 
   <div class="blog-show-container">
     <% if @blogs[0] && @blogs[0].photos[0] %>
       <%= cl_image_tag @blogs[0].photos[0].key %>
       <div class="main-blog-index-title"><%= link_to @blogs[0].title, blog_path(@blogs[0]) %> </div>
     <% end %>
-    <div class="flowers">
-      <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.16_wnv8sa.png">
-      <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.19_ztonyr.png">
-    </div>
   </div>
 
   <% if !@blogs[0] %>
   <div class="blog-show-container">
     <img src="https://images.unsplash.com/flagged/photo-1563258574-f7dbe336d56b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="come back soon">
     <div class="main-blog-index-title"><p>We have no blogs at the moment, please come back soon!</p> </div>
-
-  <div class="flowers">
-    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.16_wnv8sa.png">
-    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.19_ztonyr.png">
-  </div>
   </div>
 <% end %>
 
@@ -107,12 +95,6 @@
     <% end %>
   </div>
 
-  <div class="vase-img">
-    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209168/Screenshot_2020-10-20_at_16.52.03_iiw3qm.png">
-  </div>
-  <div class="pillar-img">
-    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.14_ykfitx.png">
-  </div>
 <div class="admin-options">
   <% if policy(Blog).new? %>
   <%= link_to "New Blog", new_blog_path %>
