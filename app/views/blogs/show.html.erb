@@ -54,13 +54,7 @@
   </div>
 </div>
 </section>
-<div class="head-img">
-  <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209168/Screenshot_2020-10-20_at_16.52.00_qfhkta.png">
-</div>
 
-  <div class="big-vase-img">
-    <img src="https://res.cloudinary.com/materialmatters/image/upload/v1603209159/Screenshot_2020-10-20_at_16.52.09_fx4rww.png">
-  </div>
   <div class="admin-options">
    <% if policy(Blog).destroy? %>
       <%= link_to "Delete Blog", blog_path(@blog), :method => :delete, data: { confirm: 'Are you sure?'} %>

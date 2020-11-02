@@ -7,6 +7,14 @@
     <div class="fade-in-1">
     <div class="options-container">
       <main class="page-content">
+        <div class="d_card">
+          <%= link_to teams_path do %>
+            <div class="content">
+              <h2 class="heading">About us</h2>
+              <p class="data-content">Meet the team behind the company. </p>
+            </div>
+          <% end %>
+        </div>
           <div class="d_card">
             <%= link_to blogs_path do %>
             <div class="content">
@@ -30,15 +38,6 @@
             <div class="content">
               <h2 class="heading">Spotlight</h2>
               <p class="data-content">See our group of partners who we work closely with. </p>
-            </div>
-          <% end %>
-        </div>
-
-        <div class="d_card">
-          <%= link_to teams_path do %>
-            <div class="content">
-              <h2 class="heading">Our Team</h2>
-              <p class="data-content">Meet the team behind the company. </p>
             </div>
           <% end %>
         </div>
