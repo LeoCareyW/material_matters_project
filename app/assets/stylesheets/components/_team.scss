@@ -1,6 +1,7 @@
 .about-paragraph {
   display: flex;
   justify-content: space-around;
+  margin-top: 3vh;
   margin-right: 16vw;
   margin-left: 16vw;
 }
@@ -23,6 +24,14 @@
   justify-content: center;
   margin-right: 16vw;
   margin-left: 16vw;
+}
+
+.email-link {
+  color: black;
+}
+
+.email-link:hover {
+  color: grey;
 }
 
 .fa-linkedin-in {

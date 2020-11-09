@@ -35,7 +35,7 @@ typesetting industry. Lorem Ipsum has been the industry's
   printer took a galley of type and scrambled it to make a
    type specimen book.  </p>
 
-   <h6 class="contact-us-paragraph">Contact us &nbsp;- &nbsp;<a href="mailto:materialmatterz@gmail.com"> materialmatterz@gmail.com</a></h6>
+   <h6 class="contact-us-paragraph"><b>Lets talk!</b>&nbsp;Contact us at&nbsp;<a class="email-link" href="mailto:materialmatterz@gmail.com"> materialmatterz@gmail.com</a></h6>
 
 
   <div class="fade-in">
@@ -48,7 +48,7 @@ typesetting industry. Lorem Ipsum has been the industry's
             </div>
           <% end %>
 
-          <p class="team-member-name"><%= link_to "#{team.name}", team_path(team) %> |  <span class="role"><%= team.role %></span> </p>
+          <p class="team-member-name"><%= team.name%> |  <span class="role"><%= team.role %></span> </p>
           <div class="social-media-container">
             <% if team.linkedin %>
               <div class="social-media"><a href=<%= team.linkedin %> target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
